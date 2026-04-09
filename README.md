@@ -1,4 +1,4 @@
-# 🎥 movies-by-director
+# 🎥 movies-by-director (Español)
 
 ## 📝 Descripción
 
@@ -40,7 +40,7 @@ movies-by-director/
 
 ---------------------------------------------------------------------------------
 
-# 🎥 movies-by-director
+# 🎥 movies-by-director (English)
 
 ## 📝 Description
 
