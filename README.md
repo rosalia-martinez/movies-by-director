@@ -24,6 +24,7 @@ Construir una interfaz web que liste directores y, al seleccionar uno, muestre s
 ## 🗂️ Arquitectura del Proyecto
 
 Hemos organizado el proyecto en una estructura clara para evitar conflictos y facilitar la escalabilidad:
+```plain
 movies-by-director/
 ├── index.html # Página principal
 ├── pages/ # Páginas por director
@@ -35,6 +36,7 @@ movies-by-director/
 │ │ └── style.css
 │ └── images/
 └── README.md
+```
 
 ---------------------------------------------------------------------------------
 
@@ -64,6 +66,7 @@ Build a web interface that lists directors and, upon selection, displays their m
 ## 🗂️ Project Architecture
 
 We have organized the project with a clear structure to avoid conflicts and make it easy to scale:
+```plain
 movies-by-director/
 ├── index.html # Página principal
 ├── pages/ # Páginas por director
@@ -75,3 +78,4 @@ movies-by-director/
 │ │ └── style.css
 │ └── images/
 └── README.md
+```
