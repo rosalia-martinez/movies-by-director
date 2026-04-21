@@ -1,0 +1,159 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #12121d;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: whitesmoke;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-principal {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.encabezado-cine {
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  padding-bottom: 1.5rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: whitesmoke;
+}
+
+.subtitulo {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #a6a6b0;
+}
+
+.resaltado {
+  color: #e2b748;
+  font-weight: 500;
+}
+
+.cuadricula-directores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.tarjeta-director {
+  text-decoration: none;
+  color: whitesmoke;
+  display: block;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.tarjeta-director:hover {
+  transform: translateY(-5px);
+  filter: contrast(1.1);
+}
+
+.marco-retrato {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #1e1e24;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.tarjeta-director:hover .marco-retrato {
+  box-shadow: 0 24px 38px -12px rgba(0, 0, 0, 0.8);
+  border-color: rgba(226, 183, 72, 0.25);
+}
+
+.marco-retrato img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.capa-nombre {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+}
+
+.nombre-sobre-imagen {
+  color: white;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.contador-peliculas {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e2b748;
+  background: rgba(0,0,0,0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 183, 72, 0.3);
+}
+
+.pie-tarjeta {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.nombre-director {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: whitesmoke;
+}
+
+.tarjeta-director:hover .nombre-director {
+  color: #e2b748;
+}
+
+.fechas {
+  font-size: 0.8rem;
+  color: #71717a;
+  margin-top: 0.2rem;
+  letter-spacing: 1.5px;
+}
+
+.pie-pagina {
+  margin-top: 5rem;
+  text-align: center;
+  font-weight: 400;
+  color: #71717a;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  body { padding: 1.5rem 1rem; }
+  h1 { font-size: 2.5rem; }
+  .cuadricula-directores { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .nombre-sobre-imagen { font-size: 1.3rem; }
+}
+
+@media (max-width: 420px) {
+  .cuadricula-directores { grid-template-columns: 1fr; }
+}
