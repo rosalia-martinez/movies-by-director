@@ -1,3 +1,6 @@
+/* ======================================== */
+/* RESET GENERAL */
+/* ======================================== */
 
 * {
   margin: 0;
@@ -5,155 +8,412 @@
   box-sizing: border-box;
 }
 
+/* ======================================== */
+/* BODY */
+/* ======================================== */
+
 body {
   background-color: #12121d;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   color: whitesmoke;
-  padding: 2rem 1.5rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
+
+/* ======================================== */
+/* CONTENEDOR PRINCIPAL */
+/* ======================================== */
 
 .contenedor-principal {
-  max-width: 1400px;
   width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 2rem 1.5rem;
 }
 
+/* ======================================== */
+/* BARRA A-Z */
+/* ======================================== */
+
+.barra-alfabeto {
+
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  padding: 1rem;
+
+  background-color: #181824;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  position: relative;
+
+  z-index: 100;
+}
+
+/* CADA LETRA */
+
+.letra-menu {
+  position: relative;
+}
+
+/* BOTON */
+
+.letra-menu span {
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #232331;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* HOVER BOTON */
+
+.letra-menu:hover span {
+
+  background-color: #e2b748;
+
+  color: black;
+}
+
+/* DROPDOWN */
+
+.dropdown-peliculas {
+
+  display: none;
+
+  position: absolute;
+
+  top: 42px;
+  left: 0;
+
+  min-width: 260px;
+
+  background-color: #1e1e24;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  z-index: 999;
+}
+
+/* MOSTRAR */
+
+.letra-menu:hover .dropdown-peliculas {
+  display: block;
+}
+
+/* LINKS */
+
+.dropdown-peliculas a {
+
+  display: block;
+
+  padding: 1rem;
+
+  color: white;
+
+  text-decoration: none;
+}
+
+.dropdown-peliculas a:hover {
+
+  background-color: rgba(255,255,255,0.05);
+
+  color: #e2b748;
+}
+
+/* ======================================== */
+/* ENCABEZADO */
+/* ======================================== */
+
 .encabezado-cine {
-  margin-bottom: 3.5rem;
-  border-bottom: 1px solid rgb(100, 100, 100);
+
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+
+  border-bottom: 1px solid rgb(100,100,100);
+
   padding-bottom: 1.5rem;
 }
 
 h1 {
+  font-size: 4rem;
   font-weight: 500;
-  font-size: 3.2rem;
-  line-height: 1.2;
-  color: whitesmoke;
 }
 
 .subtitulo {
-  font-weight: 300;
-  font-size: 1.2rem;
   margin-top: 0.5rem;
+
+  font-size: 1.3rem;
+
   color: #a6a6b0;
 }
 
 .resaltado {
   color: #e2b748;
-  font-weight: 500;
 }
+
+/* ======================================== */
+/* GRID DIRECTORES */
+/* ======================================== */
 
 .cuadricula-directores {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
   gap: 2rem 1.5rem;
 }
 
 .tarjeta-director {
+
   text-decoration: none;
+
   color: whitesmoke;
+
   display: block;
-  transition: transform 0.2s ease;
-  cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .tarjeta-director:hover {
   transform: translateY(-5px);
-  filter: contrast(1.1);
 }
 
 .marco-retrato {
-  position: relative;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #1e1e24;
-  border: 1px solid rgb(100, 100, 100);
-}
 
-.tarjeta-director:hover .marco-retrato {
-  box-shadow: 0 24px 38px -12px rgba(0, 0, 0, 0.8);
-  border-color: rgba(226, 183, 72, 0.25);
+  position: relative;
+
+  aspect-ratio: 4/5;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background-color: #1e1e24;
+
+  border: 1px solid rgb(100,100,100);
 }
 
 .marco-retrato img {
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  display: block;
 }
 
 .capa-nombre {
+
   position: absolute;
+
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem 1.2rem 1.2rem 1.2rem;
+
+  padding: 2rem 1.2rem 1.2rem;
 }
 
 .nombre-sobre-imagen {
-  color: white;
-  font-weight: 500;
+
   font-size: 1.6rem;
-  line-height: 1.2;
-  margin-bottom: 0.4rem;
+
+  font-weight: 500;
 }
 
 .contador-peliculas {
+
   display: inline-block;
-  font-weight: 400;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #e2b748;
-  background: rgba(0,0,0,0.3);
+
+  margin-top: 0.5rem;
+
   padding: 0.2rem 0.6rem;
+
   border-radius: 20px;
-  border: 1px solid rgba(226, 183, 72, 0.3);
+
+  background-color: rgba(0,0,0,0.3);
+
+  border: 1px solid rgba(226,183,72,0.3);
+
+  color: #e2b748;
+
+  font-size: 0.8rem;
 }
 
 .pie-tarjeta {
   margin-top: 1rem;
-  text-align: left;
 }
 
 .nombre-director {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: whitesmoke;
-}
 
-.tarjeta-director:hover .nombre-director {
-  color: #e2b748;
+  font-size: 1.2rem;
+
+  font-weight: 600;
 }
 
 .fechas {
-  font-size: 0.8rem;
-  color: #71717a;
+
   margin-top: 0.2rem;
-  letter-spacing: 1.5px;
+
+  color: #71717a;
+
+  font-size: 0.8rem;
 }
 
+/* ======================================== */
+/* BOTON VOLVER */
+/* ======================================== */
+
+.boton-volver {
+
+  display: inline-block;
+
+  margin-bottom: 2rem;
+
+  color: #e2b748;
+
+  text-decoration: none;
+}
+
+.boton-volver:hover {
+  color: white;
+}
+
+/* ======================================== */
+/* CONTENEDOR PELICULAS */
+/* ======================================== */
+
+.contenedor-peliculas {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+/* ======================================== */
+/* ACORDEON */
+/* ======================================== */
+
+.pelicula {
+
+  background-color: #1e1e24;
+
+  border: 1px solid rgb(100,100,100);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.pelicula summary {
+
+  padding: 1.2rem;
+
+  cursor: pointer;
+
+  font-size: 1.3rem;
+
+  font-weight: 600;
+
+  color: #e2b748;
+}
+
+.pelicula summary:hover {
+  background-color: rgba(255,255,255,0.03);
+}
+
+/* ======================================== */
+/* CONTENIDO INTERNO */
+/* ======================================== */
+
+.contenido-pelicula {
+
+  display: flex;
+
+  gap: 2rem;
+
+  padding: 1.5rem;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.poster-pelicula {
+
+  width: 220px;
+
+  border-radius: 8px;
+
+  object-fit: cover;
+}
+
+.info-pelicula {
+  flex: 1;
+}
+
+.info-pelicula p {
+
+  margin-bottom: 1rem;
+
+  line-height: 1.6;
+
+  color: #d1d1d1;
+}
+
+.info-pelicula strong {
+  color: white;
+}
+
+/* ======================================== */
+/* FOOTER */
+/* ======================================== */
+
 .pie-pagina {
+
   margin-top: 5rem;
+
   text-align: center;
-  font-weight: 400;
+
   color: #71717a;
-  font-size: 0.9rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.05);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
   padding-top: 2rem;
 }
 
-@media (max-width: 600px) {
-  body { padding: 1.5rem 1rem; }
-  h1 { font-size: 2.5rem; }
-  .cuadricula-directores { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-  .nombre-sobre-imagen { font-size: 1.3rem; }
-}
+/* ======================================== */
+/* RESPONSIVE */
+/* ======================================== */
 
-@media (max-width: 420px) {
-  .cuadricula-directores { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .contenido-pelicula {
+    flex-direction: column;
+  }
+
+  .poster-pelicula {
+    width: 100%;
+    max-width: 320px;
+  }
+
 }
